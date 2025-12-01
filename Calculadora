@@ -1,5 +1,28 @@
 Para la calculadora definimos el flujo típico en clase es: Diseño del circuito (combinacional o secuencial), la simulación para verificar que funciona, luego la sistesis se traduce a lógica física dentro de la FPGA y luego se hace la programación de la FPGA. La FPGA queda funcionando como un circuito digital dedicado, sin ejecutar instrucciones.
 
+Paso a paso:
+inicio
+  repetir
+    mostrar "Ingrese A:"
+    leer A
+    mostrar "Ingrese B:"
+    leer B
+    mostrar "Ingrese operador (+ - * /):"
+    leer op
+    si op == "+" entonces C = A + B
+    sino si op == "-" entonces C = A - B
+    sino si op == "*" entonces C = A * B
+    sino si op == "/" entonces
+       si B != 0 entonces C = A / B
+       sino mostrar "Error: división por cero"
+    sino mostrar "Operador inválido"
+    si existe C mostrar "Resultado = " C
+    mostrar "¿Otra operación? (s/n)"
+    leer r
+  hasta r == "n"
+fin
+
+Para el diagrama flujo adjunto: 
 
 module bench();
 // Testbench uses a 10 MHz clock
